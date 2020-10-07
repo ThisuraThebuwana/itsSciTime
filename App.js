@@ -1,32 +1,19 @@
 import 'react-native-gesture-handler';
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import HomeScreen from "./screens/HomeScreen";
-import DetailsScreen from "./screens/DetailsScreen";
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import MainTabsScreen from "./screens/MainTabsScreen";
 
-const Tab = createMaterialBottomTabNavigator();
-const Stack = createStackNavigator();
+const Drawer = createDrawerNavigator();
 
 export default function App() {
   return (
       <NavigationContainer>
-          <Stack.Navigator initialRouteName="Home" screenOptions={{
-              headerStyle: {
-                  backgroundColor: '#009387',
-              },
-              headerTintColor: '#fff',
-              headerTitleStyle: {
-                  fontWeight: 'bold'
-              }
-          }}>
-              <Stack.Screen name="Home" component={HomeScreen} />
-              <Stack.Screen name="Details" component={DetailsScreen} />
-          </Stack.Navigator>
+          {/*<Drawer.Navigator initialRouteName="Home">*/}
+              {/*<Drawer.Screen name="Home" component={MainTabsScreen} />*/}
+              {/*/!*<Drawer.Screen name="Details" component={MainTabsScreen} />*!/*/}
+          {/*</Drawer.Navigator>*/}
+          <MainTabsScreen></MainTabsScreen>
       </NavigationContainer>
   );
 }
