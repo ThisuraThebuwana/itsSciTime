@@ -1,5 +1,5 @@
 import React from "react";
-import {Button, StyleSheet, Text, View} from "react-native";
+import {Button, ImageBackground, StyleSheet, Text, TouchableOpacity, View} from "react-native";
 
 const AccountBalanceScreen = ({navigation}) => {
     return (
@@ -7,17 +7,19 @@ const AccountBalanceScreen = ({navigation}) => {
 
             <View style={styles.balanceDialog}>
 
-                    <Text>Account Balance</Text>
+                    <Text style={{fontSize:18}}>Account Balance</Text>
                 <View style={styles.viewAmount}>
                     <Text style={{fontSize:18, paddingTop: 10}}>Rs.</Text><Text style={{fontSize:28,paddingLeft: 10}}>1500.00</Text>
                 </View>
 
                 <View style={styles.fixToText}>
-                    <Button
-                        title='Button'
-                        color={'red'}
-                        onPress={() => navigation.navigate('Payment Method')}
-                    />
+                    {/*<Button*/}
+                        {/*title='Button'*/}
+                        {/*onPress={() => navigation.navigate('Payment Method')}*/}
+                    {/*/>*/}
+                    <TouchableOpacity style={styles.btn1} onPress={() => navigation.navigate('Payment Method')}>
+                        <Text style={{color:'#fff'}}>Reload</Text>
+                    </TouchableOpacity>
                 </View>
             </View>
         </View>
@@ -52,12 +54,20 @@ const styles = StyleSheet.create({
     viewAmount: {
         flexDirection: 'row',
         paddingLeft: 40,
+        marginTop: 30
     },
     balanceDialog: {
         height:200,
         width:280,
         backgroundColor:'#E8DAEF',
         borderRadius: 15,
-        paddingLeft: 20
+        padding: 20
+    },
+    btn1: {
+        backgroundColor: '#E53535',
+        alignItems: 'center',
+        borderRadius: 10,
+        fontSize:18,
+        padding: 10,
     }
 });

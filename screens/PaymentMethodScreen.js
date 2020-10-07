@@ -1,6 +1,5 @@
 import React from "react";
-import {Button, StyleSheet, Text, View, TouchableOpacity} from "react-native";
-import Image from "react-native-web/dist/exports/Image";
+import {Button, StyleSheet, Text, View, TouchableOpacity, ImageBackground} from "react-native";
 
 const PaymentMethodScreen = ({navigation}) => {
     return (
@@ -8,16 +7,14 @@ const PaymentMethodScreen = ({navigation}) => {
             {/*<View style={styles.balanceDialog}>*/}
                 <Text style={{fontSize:18}}>Select Payment Method</Text>
                 <TouchableOpacity style={styles.btn1} onPress={() => navigation.navigate('Home')}>
-                    <Image
-                        style={{width:128,height:128}}
-                        source={{uri: 'https://www.phonecardsrilanka.com/wp-content/uploads/2016/07/creditcard-visa.png'}}
-                    />
+                    <ImageBackground source={{ uri: "https://www.phonecardsrilanka.com/wp-content/uploads/2016/07/creditcard-visa.png" }} style={{width:128,height:128}}>
+
+                    </ImageBackground>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.btn2} onPress={() => navigation.navigate('Home')}>
-                    <Image
-                        style={{width:128,height:128}}
-                        source={{uri: 'https://cdn.iconscout.com/icon/free/png-256/master-card-4-842898.png'}}
-                    />
+                    <ImageBackground source={{ uri: "https://cdn.iconscout.com/icon/free/png-256/master-card-4-842898.png" }} style={{width:128,height:128}}>
+
+                    </ImageBackground>
                 </TouchableOpacity>
             {/*</View>*/}
         </View>
@@ -49,7 +46,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         padding: 10,
         borderRadius: 15,
-        marginTop: 8
+        marginTop: 12,
     },
     btn2: {
         backgroundColor: '#FDE7D6',
@@ -57,6 +54,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         padding: 10,
         borderRadius: 15,
-        marginTop: 8
+        marginTop: 12
     }
 });
