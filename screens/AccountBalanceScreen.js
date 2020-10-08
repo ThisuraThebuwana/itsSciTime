@@ -1,5 +1,5 @@
 import React from "react";
-import {Button, ImageBackground, StyleSheet, Text, TouchableOpacity, View} from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View} from "react-native";
 
 const AccountBalanceScreen = ({navigation}) => {
     return (
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     balanceDialog: {
         height:200,
         width:280,
-        backgroundColor:'#E8DAEF',
+        backgroundColor:'#F4ECF7',
         borderRadius: 15,
         padding: 20
     },

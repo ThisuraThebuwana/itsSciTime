@@ -1,19 +1,20 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createDrawerNavigator } from '@react-navigation/drawer';
 import MainTabsScreen from "./screens/MainTabsScreen";
+import createStackNavigator from "@react-navigation/stack/src/navigators/createStackNavigator";
+import LoginScreen from "./screens/LoginScreen";
 
-const Drawer = createDrawerNavigator();
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
       <NavigationContainer>
-          {/*<Drawer.Navigator initialRouteName="Home">*/}
-              {/*<Drawer.Screen name="Home" component={MainTabsScreen} />*/}
-              {/*/!*<Drawer.Screen name="Details" component={MainTabsScreen} />*!/*/}
-          {/*</Drawer.Navigator>*/}
-          <MainTabsScreen></MainTabsScreen>
+          <Stack.Navigator initialRouteName="Login">
+              <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/>
+              <Stack.Screen name="Main Screen" component={MainTabsScreen} options={{ headerShown: false }}/>
+          </Stack.Navigator>
       </NavigationContainer>
   );
 }

@@ -4,7 +4,6 @@ import DetailsScreen from "./DetailsScreen";
 import React from "react";
 import {createStackNavigator} from "@react-navigation/stack";
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import AccountBalanceScreen from "./AccountBalanceScreen";
 import ChatScreen from "./ChatScreen";
 import AccountScreen from "./AccountScreen";
 
@@ -18,8 +17,8 @@ const Tab = createMaterialBottomTabNavigator();
 const MainTabsScreen = () => (
     <Tab.Navigator
         initialRouteName="Account"
-        activeColor="#fff"
-        barStyle={{ backgroundColor: '#009387' }}
+        activeColor="#008CBA"
+        barStyle={{ backgroundColor: '#fff' }}
     >
         <Tab.Screen
             name="Home"
@@ -111,9 +110,9 @@ const DetailsStackScreen = ({navigation})=> (
 const AccountStackScreen = ({navigation})=> (
     <AccountStack.Navigator screenOptions={{
         headerStyle: {
-            backgroundColor: '#009387',
+            backgroundColor: '#fff',
         },
-        headerTintColor: '#fff',
+        headerTintColor: '#000',
         headerTitleStyle: {
             fontWeight: 'bold'
         }
