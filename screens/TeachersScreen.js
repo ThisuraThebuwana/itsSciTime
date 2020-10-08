@@ -1,19 +1,15 @@
 import React from "react";
 import {Button, StyleSheet, Text, View} from "react-native";
 
-const HomeScreen = ({navigation}) => {
+const TeachersScreen = ({navigation}) => {
     return (
         <View style={styles.container}>
-            <Text>Home Screen</Text>
-            <Button
-                title="Go to Details"
-                onPress={() => navigation.navigate('Details')}
-            />
+            <Text>Lesson Screen</Text>
         </View>
     );
 };
 
-export default HomeScreen;
+export default TeachersScreen;
 
 
 const styles = StyleSheet.create({
@@ -21,5 +17,6 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
+        backgroundColor:'#fff'
     },
 });

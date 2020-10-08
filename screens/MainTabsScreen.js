@@ -1,42 +1,44 @@
-import HomeScreen from "./HomeScreen";
 import Icon from 'react-native-vector-icons/Ionicons';
-import DetailsScreen from "./DetailsScreen";
 import React from "react";
 import {createStackNavigator} from "@react-navigation/stack";
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import ChatScreen from "./ChatScreen";
 import AccountScreen from "./AccountScreen";
+import LessonScreen from "./LessonScreen";
+import ContactScreen from "./ContactScreen";
+import TeachersScreen from "./TeachersScreen";
 
-const HomeStack = createStackNavigator();
-const DetailsStack = createStackNavigator();
+const LessonStack = createStackNavigator();
+const ContactStack = createStackNavigator();
 const AccountStack = createStackNavigator();
 const ChatStack = createStackNavigator();
+const TeachersStack = createStackNavigator();
 
 const Tab = createMaterialBottomTabNavigator();
 
 const MainTabsScreen = () => (
     <Tab.Navigator
-        initialRouteName="Account"
+        initialRouteName="Lessons"
         activeColor="#008CBA"
         barStyle={{ backgroundColor: '#fff' }}
     >
         <Tab.Screen
-            name="Home"
-            component={HomeStackScreen}
+            name="Lessons"
+            component={LessonStackScreen}
             options={{
-                tabBarLabel: 'Home',
+                tabBarLabel: 'Lessons',
                 tabBarIcon: ({ color }) => (
-                    <Icon name="ios-home" color={color} size={26} />
+                    <Icon name="ios-tv" color={color} size={26} />
                 ),
             }}
         />
         <Tab.Screen
-            name="Details"
-            component={DetailsStackScreen}
+            name="Chat"
+            component={ChatStackScreen}
             options={{
-                tabBarLabel: 'Details',
+                tabBarLabel: 'Chat',
                 tabBarIcon: ({ color }) => (
-                    <Icon name="ios-tv" color={color} size={26} />
+                    <Icon name="ios-chatbubbles" color={color} size={26} />
                 ),
             }}
         />
@@ -51,12 +53,22 @@ const MainTabsScreen = () => (
             }}
         />
         <Tab.Screen
-            name="Chat"
-            component={ChatStackScreen}
+            name="Teachers"
+            component={TeachersStackScreen}
             options={{
-                tabBarLabel: 'Chat',
+                tabBarLabel: 'Teachers',
                 tabBarIcon: ({ color }) => (
-                    <Icon name="ios-chatbubbles" color={color} size={26} />
+                    <Icon name="ios-person" color={color} size={26} />
+                ),
+            }}
+        />
+        <Tab.Screen
+            name="Contact"
+            component={ContactStackScreen}
+            options={{
+                tabBarLabel: 'Contact',
+                tabBarIcon: ({ color }) => (
+                    <Icon name="ios-information-circle" color={color} size={26} />
                 ),
             }}
         />
@@ -65,46 +77,34 @@ const MainTabsScreen = () => (
 
 export default MainTabsScreen;
 
-const HomeStackScreen = ({navigation})=> (
-    <HomeStack.Navigator screenOptions={{
+const LessonStackScreen = ({navigation})=> (
+    <LessonStack.Navigator screenOptions={{
         headerStyle: {
-            backgroundColor: '#009387',
+            backgroundColor: '#fff',
         },
-        headerTintColor: '#fff',
+        headerTintColor: '#000',
         headerTitleStyle: {
             fontWeight: 'bold'
         }
     }}>
-        <HomeStack.Screen name="HOME" component={HomeScreen} options={{
-            // headerLeft : () => (
-            //     <Icon.Button name="ios-menu" size={25}
-            //                  backgroundColor="#009387" onPress={() =>
-            //         navigation.openDrawer()
-            //     }/>
-            // )
+        <LessonStack.Screen name="LESSONS" component={LessonScreen} options={{
         }}/>
-    </HomeStack.Navigator>
+    </LessonStack.Navigator>
 );
 
-const DetailsStackScreen = ({navigation})=> (
-    <DetailsStack.Navigator screenOptions={{
+const ContactStackScreen = ({navigation})=> (
+    <ContactStack.Navigator screenOptions={{
         headerStyle: {
-            backgroundColor: '#009387',
+            backgroundColor: '#fff',
         },
-        headerTintColor: '#fff',
+        headerTintColor: '#000',
         headerTitleStyle: {
             fontWeight: 'bold'
         }
     }}>
-        <DetailsStack.Screen name="ABOUT" component={DetailsScreen} options={{
-            // headerLeft : () => (
-            //     <Icon.Button name="ios-menu" size={25}
-            //                  backgroundColor="#009387" onPress={() =>
-            //         navigation.openDrawer()
-            //     }/>
-            // )
+        <ContactStack.Screen name="CONTACT" component={ContactScreen} options={{
         }}/>
-    </DetailsStack.Navigator>
+    </ContactStack.Navigator>
 );
 
 const AccountStackScreen = ({navigation})=> (
@@ -131,20 +131,29 @@ const AccountStackScreen = ({navigation})=> (
 const ChatStackScreen = ({navigation})=> (
     <ChatStack.Navigator screenOptions={{
         headerStyle: {
-            backgroundColor: '#009387',
+            backgroundColor: '#fff',
         },
-        headerTintColor: '#fff',
+        headerTintColor: '#000',
         headerTitleStyle: {
             fontWeight: 'bold'
         }
     }}>
         <ChatStack.Screen name="CHAT ROOM" component={ChatScreen} options={{
-            // headerLeft : () => (
-            //     <Icon.Button name="ios-menu" size={25}
-            //                  backgroundColor="#009387" onPress={() =>
-            //         navigation.openDrawer()
-            //     }/>
-            // )
         }}/>
     </ChatStack.Navigator>
+);
+
+const TeachersStackScreen = ({navigation})=> (
+    <TeachersStack.Navigator screenOptions={{
+        headerStyle: {
+            backgroundColor: '#fff',
+        },
+        headerTintColor: '#000',
+        headerTitleStyle: {
+            fontWeight: 'bold'
+        }
+    }}>
+        <TeachersStack.Screen name="TEACHERS" component={TeachersScreen} options={{
+        }}/>
+    </TeachersStack.Navigator>
 );

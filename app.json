@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "itsSciTime_v1",
-    "slug": "itsSciTime_v1",
+    "name": "itsSciTime",
+    "slug": "itsSciTime",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
