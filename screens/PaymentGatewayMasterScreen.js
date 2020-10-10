@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Alert, StyleSheet, Text, View, TouchableOpacity, Image, ScrollView, ImageBackground} from "react-native";
 import TextInput from "react-native-paper/src/components/TextInput/TextInput";
-import icon from "../assets/creditcard-visa.png";
+import icon from "../assets/master-card-4.png";
 
 
 const styles = StyleSheet.create({

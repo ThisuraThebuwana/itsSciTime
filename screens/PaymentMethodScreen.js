@@ -12,7 +12,7 @@ const PaymentMethodScreen = ({navigation}) => {
 
                 </ImageBackground>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.btn2} onPress={() => navigation.navigate('Payment Gateway')}>
+            <TouchableOpacity style={styles.btn2} onPress={() => navigation.navigate('Payment Gateway Master')}>
                 <ImageBackground source={masterIcon} style={{width:128,height:128}}>
 
                 </ImageBackground>
