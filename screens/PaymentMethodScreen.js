@@ -1,17 +1,19 @@
 import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity, ImageBackground} from "react-native";
+import visaIcon from '../assets/creditcard-visa.png';
+import masterIcon from '../assets/master-card-4.png';
 
 const PaymentMethodScreen = ({navigation}) => {
     return (
         <View style={styles.container}>
             <Text style={{fontSize:18}}>Select Payment Method</Text>
-            <TouchableOpacity style={styles.btn1} onPress={() => navigation.navigate('Home')}>
-                <ImageBackground source={{ uri: "https://www.phonecardsrilanka.com/wp-content/uploads/2016/07/creditcard-visa.png" }} style={{width:128,height:128}}>
+            <TouchableOpacity style={styles.btn1} onPress={() => navigation.navigate('Payment Gateway')}>
+                <ImageBackground source={visaIcon} style={{width:128,height:128}}>
 
                 </ImageBackground>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.btn2} onPress={() => navigation.navigate('Home')}>
-                <ImageBackground source={{ uri: "https://cdn.iconscout.com/icon/free/png-256/master-card-4-842898.png" }} style={{width:128,height:128}}>
+            <TouchableOpacity style={styles.btn2} onPress={() => navigation.navigate('Payment Gateway')}>
+                <ImageBackground source={masterIcon} style={{width:128,height:128}}>
 
                 </ImageBackground>
             </TouchableOpacity>

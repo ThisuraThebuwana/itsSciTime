@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
-import {Image, StyleSheet, Text, View, TouchableOpacity, SafeAreaView, ScrollView, ImageBackground} from "react-native";
+import {StyleSheet, Text, View, TouchableOpacity, ImageBackground} from "react-native";
 import TextInput from "react-native-paper/src/components/TextInput/TextInput";
-import Icon from "./MainTabsScreen";
-import IconButton from "react-native-paper/src/components/IconButton";
 import attachIcon from '../assets/icons8-attach-50.png'
 
 const styles = StyleSheet.create({
@@ -60,7 +58,7 @@ class ChatScreen extends Component {
 
         return (
             <TextInput
-                style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
+                style={{ height: 40, borderColor: 'gray', borderWidth: 1 ,borderRadius:5}}
                 onChangeText={text => onChangeText(text)}
                 value={value}
                 placeholder={'Type message...'}
@@ -93,7 +91,6 @@ class ChatScreen extends Component {
                                 <ImageBackground source={attachIcon} style={{width:30,height:30, marginTop:7 ,marginLeft:15}}>
 
                                 </ImageBackground>
-                                {/*<Text>jhg</Text>*/}
                             </View>
                         </TouchableOpacity >
 
