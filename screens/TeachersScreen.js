@@ -1,16 +1,20 @@
-import React from "react";
-import {Button, StyleSheet, Text, View} from "react-native";
+import React, { useState, Component } from "react";
+import {StyleSheet, Text, View, Image, Modal} from "react-native";
+
+import TeacherTable from '../components/TeacherSubjectTable';
 
 const TeachersScreen = ({navigation}) => {
+
+    const [modalOpen, setModalOpen] = useState(false);
+
     return (
         <View style={styles.container}>
-            <Text>Lesson Screen</Text>
+            <TeacherTable />
         </View>
     );
 };
 
 export default TeachersScreen;
-
 
 const styles = StyleSheet.create({
     container: {

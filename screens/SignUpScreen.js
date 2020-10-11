@@ -7,7 +7,7 @@ import {
     Dimensions,
     Platform,
     StyleSheet,
-    TextInput,
+    TextInput, Modal,
 } from "react-native";
 
 import * as Animatable from "react-native-animatable";
@@ -17,9 +17,12 @@ import Feather from "react-native-vector-icons/Feather";
 
 import { useTheme } from "@react-navigation/native";
 import {StatusBar} from "expo-status-bar";
+import {TouchableWithoutFeedback} from "react-native-gesture-handler";
 
 const SignUpScreen = ({ navigation }) => {
     // function to check input change
+
+    const [modalOpen, setModalOpen] = useState(false);
 
     const [data, setData] = React.useState({
         email: "",
@@ -242,6 +245,32 @@ const SignUpScreen = ({ navigation }) => {
                             sign in here
                         </Text>
                     </TouchableOpacity>
+//***********************************************************************************************************
+                    <Modal visible={modalOpen} animationType='slide'>
+                            <View>
+                            <FontAwesome5
+                        name="window-close"
+                        size={25}
+                        style={globalStyles.closeIcon}
+                        color="black"
+                        onPress={()=>setModalOpen(false)}
+                        />
+                        <Text style={globalStyles.headingText}>Register as a Teacher</Text>
+                        <TeacherSignupForm/>
+                        </View>
+                    </Modal>
+                    <TouchableWithoutFeedback onPress={()=>setModalOpen(true)}>
+                        <View style={globalStyles.iconWithText}>
+                            <FontAwesome5
+                        name="chalkboard-teacher"
+                        size={15}
+                        style={globalStyles.icon}
+                        color="black"
+                            />
+                            <Text>Sign Up as a Teacher</Text>
+                        </View>
+                    </TouchableWithoutFeedback>
+        //*****************************************************************************
                 </View>
             </View>
             {/*</Animatable.View>*/}
