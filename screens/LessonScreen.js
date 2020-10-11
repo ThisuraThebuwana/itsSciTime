@@ -1,22 +1,28 @@
 import React from "react";
-import { StyleSheet, Text, View} from "react-native";
+import createStackNavigator from "@react-navigation/stack/src/navigators/createStackNavigator";
 
-const LessonScreen = ({navigation}) => {
+import ShowSubjectScreen from "./ShowSubjectScreen";
+import ShowGradeScreen from "./ShowGradeScreen";
+import ShowVideoScreen from "./ShowVideoScreen";
+import BuyVideoScreen from "./BuyVideoScreen";
+import PlayVideoScreen from "./PlayVideoScreen";
+import PlayVideoScreen1 from "./PlayVideoScreen1";
+
+const Stack = createStackNavigator();
+
+const LessonScreen = ({}) => {
     return (
-        <View style={styles.container}>
-            <Text>Lesson Screen</Text>
-        </View>
+                <Stack.Navigator>
+                    <Stack.Screen name="Select Grade" component={ShowGradeScreen} options={{ headerShown: false}}/>
+                    <Stack.Screen name="Select Subject" component={ShowSubjectScreen} options={{ headerShown: false}}/>
+                    <Stack.Screen name="Select Video" component={ShowVideoScreen} options={{ headerShown: false}}/>
+                    <Stack.Screen name="Buy Video" component={BuyVideoScreen} options={{ headerShown: false}}/>
+                    <Stack.Screen name="Play Video" component={PlayVideoScreen} options={{ headerShown: false}}/>
+                    <Stack.Screen name="Play Video1" component={PlayVideoScreen1} options={{ headerShown: false}}/>
+                </Stack.Navigator>
     );
 };
 
 export default LessonScreen;
 
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor:'#fff'
-    },
-});
