@@ -1,10 +1,12 @@
 import React from "react";
-import {Button, StyleSheet, Text, View} from "react-native";
+import {StyleSheet, Text, View, Image} from "react-native";
+
+import TeacherTable from '../components/TeacherTable';
 
 const TeachersScreen = ({navigation}) => {
     return (
         <View style={styles.container}>
-            <Text>Lesson Screen</Text>
+            <TeacherTable />
         </View>
     );
 };

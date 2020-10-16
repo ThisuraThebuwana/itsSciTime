@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import {
     Button,
     Text,
     View,
+    Modal,
     TouchableOpacity,
     Dimensions,
     Platform,
@@ -12,14 +13,20 @@ import {
 
 import * as Animatable from "react-native-animatable";
 import { LinearGradient } from "expo-linear-gradient";
+import { FontAwesome5 } from '@expo/vector-icons'; 
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import Feather from "react-native-vector-icons/Feather";
 
 import { useTheme } from "@react-navigation/native";
 import {StatusBar} from "expo-status-bar";
+import { globalStyles } from '../styles/global';
+import TeacherSignupForm from '../components/TeacherSignupForm';
 
 const SignUpScreen = ({ navigation }) => {
     // function to check input change
+
+    //open close modal
+    const [modalOpen, setModalOpen] = useState(false);
 
     const [data, setData] = React.useState({
         email: "",
@@ -239,12 +246,50 @@ const SignUpScreen = ({ navigation }) => {
                                 },
                             ]}
                         >
-                            sign in here
+                            Sign in here
+                        </Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        onPress={()=>setModalOpen(true)}
+                        style={[
+                            styles.signIn,
+                            {
+                                borderColor: "#009387",
+                                borderWidth: 1,
+                                marginTop: 15,
+                            },
+                        ]}
+                    >
+                        <Text
+                            style={[
+                                styles.textSign,
+                                {
+                                    color: "#58d2c0",
+                                },
+                            ]}
+                        >
+                            Sign up to Teach
                         </Text>
                     </TouchableOpacity>
                 </View>
             </View>
             {/*</Animatable.View>*/}
+
+            {/* Modal to show teacher signup form */}
+            <Modal visible={modalOpen} animationType='slide'>
+                <View>
+                    <FontAwesome5
+                        name="window-close"
+                        size={25}
+                        style={globalStyles.closeIcon}
+                        color="black"
+                        onPress={()=>setModalOpen(false)}
+                    />
+                    <Text style={globalStyles.headingText}>Register as a Teacher</Text>
+                    <TeacherSignupForm/>
+                </View>
+            </Modal>
+
         </View>
 
     );
